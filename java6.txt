@@ -1,0 +1,61 @@
+1. Circle类代码
+
+package test3;
+public class Circle {
+      private  float radius;
+	public Circle(float radius) {
+		super();
+		this.radius = radius;
+	}
+      public Circle() {
+    	  
+      }
+      public double  getArea() {
+    	  return Math.PI*radius*radius;
+    	 
+      }
+      public double getPermiter() {
+    	  return 2*Math.PI*radius;
+ 
+      }
+ public  void show() {
+    	  double  area = getArea();
+    	  double permiter=getPermiter();
+    	  System.out.println("圆的半径 "+radius+"      圆的面积"+area+"      圆的周长"+permiter);
+      }
+}
+
+2. Cylinder类代码
+
+package test3;
+
+public class Cylinder extends Circle {
+   double hight;
+   
+public Cylinder(float radius, double hight) {
+	super(radius);
+	this.hight = hight;
+}
+public double getVolume() {
+	   return getArea()*hight;
+   }
+   public void showVolume() {
+	   double v=getArea()*hight;
+	   System.out.println("圆柱体的体积："+v);
+   }
+}
+
+3. 测试类代码
+
+package test3;
+
+public class ceshi {
+public static void main(String[] args) {
+	  Cylinder cylinder = new Cylinder(2.4f,5.6d);
+	  System.out.println("输出结果");
+	  cylinder.show();
+	  System.out.println();
+	  cylinder.showVolume();
+              }
+}
+
